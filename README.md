@@ -1,76 +1,50 @@
 # 📝 Task Manager (Upgraded Todo App)
 
-This project is an **upgraded version of my earlier Todo app**, which initially had very basic features and limited control.
+This is an upgraded version of my earlier **basic Todo app**.
 
-In this version, I **rebuilt the core logic from scratch**, focusing more on:
-- proper state handling
-- clean data flow
-- task filtering
-- real production deployment
-
-This project helped me deeply understand how React apps actually work in real-world scenarios.
+In this version, I focused more on **clean state management, proper logic, and data flow** instead of just UI.
 
 ---
 
-## 🚀 Live Demo
-
-👉 Try the app here:  
-**https://mayank332k.github.io/task-manager/**
+## 🚀 Live Demo  
+👉 https://mayank332k.github.io/task-manager/
 
 ---
 
 ## ✨ Features
-
-- Add new tasks
+- Add tasks
 - Mark tasks as completed
 - Delete tasks
-- Filter tasks:
-  - **All**
-  - **Completed**
-- Clean and minimal UI
-- Fully responsive
-- Deployed on **GitHub Pages**
+- Filter tasks (All / Completed)
+- Clean React state handling
+
+> 🔧 Active filter is under development and will be added soon.
 
 ---
 
-## 🧠 What I Learned From This Project
-
-- How state flows between components
-- Proper use of `useState` for real logic (not just demos)
-- Filtering data instead of mutating it
-- Debugging wiring issues (props, callbacks, ids)
-- Difference between **development** and **production builds**
-- Deploying a React (Vite) app correctly on GitHub Pages
-
-This project cleared many confusions I had earlier about React logic and deployment.
-
----
-
-## 🔧 Tech Stack
-
-- React (with Vite)
-- JavaScript (ES6+)
+## 🛠 Tech Stack
+- React
+- Vite
+- JavaScript
 - CSS
-- Git & GitHub
-- GitHub Pages (for deployment)
+- GitHub Pages
 
 ---
 
-## 🛠️ Work In Progress
-
-- **Active tasks filter** is currently under development  
-  (will be added in the next update 🚧)
+## 🎨 UI & Development Note
+- UI skeleton and layout are **designed by me**
+- To save time, **AI was used while creating some components**
+- **All logic, state handling, and wiring are fully written and controlled by me**
 
 ---
 
 ## 📌 Note
-
-This app is not just about UI.  
-The main focus was **logic, wiring, and real-world behavior** of a React application.
+This project helped me deeply understand:
+- State vs UI
+- Wiring logic between components
+- Filtering data properly
+- Debugging real-world issues
 
 ---
 
-## 👤 Author
-
-**Mayank Singh**  
-Learning React by building, breaking, fixing, and shipping 🚀
+Made with learning, bugs, and patience 🚀
