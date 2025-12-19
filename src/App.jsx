@@ -5,11 +5,30 @@ import Header from "./component/Header";
 import InputBox from "./component/InputBox";
 import TaskList from "./component/TaskList";
 import Choices from "./component/Choices";
+import Info from "./component/GeneralText";
 import "./App.css";
 
 function App() {
   const [data, setdata] = useState([]);
   const [choice, setchoice] = useState("all");
+
+  const addtask = (text) => {
+    {
+      if (text.length === 0) {
+        alert("Enter a valid value 🫂...");
+        return;
+      }
+    }
+    setdata([
+      // data and values declared here!!! // menas the structure of data!
+      ...data,
+      {
+        id: Date.now(),
+        text: text,
+        completed: false,
+      },
+    ]);
+  };
 
   function toggleTask(id) {
     setdata(
@@ -23,23 +42,6 @@ function App() {
     setdata(data.filter((task) => task.id !== id));
   };
 
-  const addtask = (text) => {
-    {
-      if (text.length === 0) {
-        alert("Enter valid value 🫂");
-        return;
-      }
-    }
-    setdata([
-      ...data,
-      {
-        id: Date.now(),
-        text: text,
-        completed: false,
-      },
-    ]);
-  };
-
   const filteredData =
     choice === "completed"
       ? data.filter((task) => task.completed === true)
@@ -51,6 +53,7 @@ function App() {
       <InputBox addtask={addtask} />
       {data.length != 0 && <Choices choice={choice} setchoice={setchoice} />}
       {data.length === 0 && <DottedHeader />}
+      {choice === "completed" && filteredData.length === 0 && <Info />}
       <TaskList
         DummyData={filteredData}
         toggleTask={toggleTask}

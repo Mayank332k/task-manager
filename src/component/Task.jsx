@@ -1,3 +1,5 @@
+import React from 'react';
+
 function Task({ task, toggleTask, deleteTask }) {
   const containerStyle = {
     display: "flex",
@@ -18,6 +20,9 @@ function Task({ task, toggleTask, deleteTask }) {
     marginLeft: "15px",
     fontSize: "1rem",
     fontWeight: "bold",
+    // not confirmed yet ...
+    // textDecoration: task.completed ? "line-through" : "none",
+    color: task.completed ? "#888" : "black"
   };
 
   const buttonGroupStyle = {
@@ -29,47 +34,45 @@ function Task({ task, toggleTask, deleteTask }) {
     <div style={containerStyle}>
       <style>
         {`
-                    .task-btn {
-                        padding: 5px 10px;
-                        border: 2px solid black;
-                        background-color: transparent;
-                        cursor: pointer;
-                        font-weight: bold;
-                        font-size: 1rem;
-                        transition: all 0.1s ease;
-                    }
-                    .task-btn:hover {
-                        background-color: #f0f0f0;
-                        transform: translateY(-2px);
-                    }
-                    .task-btn:active {
-                        background-color: black;
-                        color: white;
-                        transform: translateY(0px);
-                    }
-                    /* Custom checkbox style */
-                    .task-checkbox {
-                        border: none;
-                        width: 20px;
-                        height: 20px;
-                        cursor: pointer;
-                        accent-color: black; /* Makes the checkmark black */
-                    }
-                `}
+            .task-btn {
+                padding: 5px 10px;
+                border: 2px solid black;
+                background-color: transparent;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 1rem;
+                transition: all 0.1s ease;
+            }
+            .task-btn:hover {
+                background-color: #f0f0f0ff;
+                transform: translateY(-2px);
+            }
+            .task-btn:active {
+                background-color: black;
+                color: white;
+                transform: translateY(0px);
+            }
+            .task-checkbox {
+                border: none;
+                width: 20px;
+                height: 20px;
+                accent-color: black;
+            }
+        `}
       </style>
 
-      {/* Checkbox */}
       <input
         checked={task.completed}
         type="checkbox"
         className="task-checkbox"
         readOnly
+        style={{
+           visibility: task.completed ? 'visible' : 'hidden' 
+        }}
       />
 
-      {/* Task Text */}
       <span style={textStyle}>{task.text}</span>
 
-      {/* Action Buttons */}
       <div style={buttonGroupStyle}>
         <button className="task-btn" onClick={() => toggleTask(task.id)}>
           ✓
